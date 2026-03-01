@@ -1,0 +1,36 @@
+{
+  "name": "grocery-webapp",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^8.2.1",
+    "express-validator": "^7.3.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.2.1",
+    "nodemailer": "^8.0.1",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "pdfkit": "^0.15.0",
+    "winston": "^3.18.3"
+  },
+  "scripts": {
+    "start:server": "node server/server.js",
+    "seed:marketplace": "node server/scripts/seedMarketplace.js",
+    "import:kaggle": "node server/scripts/importKaggleGroceryDataset.js",
+    "migrate:roles": "node server/scripts/migrateUserRolesToCustomerSeller.js",
+    "db:indexes": "node server/scripts/createIndexes.js",
+    "test:backend": "node --test \"server/tests/integration/**/*.test.js\"",
+    "test:e2e": "node --test \"server/tests/e2e/**/*.test.js\"",
+    "test:all": "npm run test:backend && npm run test:e2e"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^11.0.1",
+    "supertest": "^7.2.2"
+  }
+}
